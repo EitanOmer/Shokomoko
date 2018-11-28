@@ -97,18 +97,12 @@ footer p {
     background-color: #141313;
     margin: 0;
 }
-.division1 p {
-    margin: 0;
+.division1Img {
+    width: 50%;
+    margin: 0 0 0 20px;
 }
 
 .division2 {
     background-color: #141313;
     margin: 0;
-}
-.division2 p {
-    margin: 0;
-}
-.division2Img {
-    width: 50%;
-    margin: 0 0 0 20px;
 }
