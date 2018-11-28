@@ -81,7 +81,7 @@ footer p {
 
 /*---------------------HOME---------------------*/
 .parralax {
-    background-image: url("img_parallax.jpg");
+    background-image: url("Images/steak.jpg");
     min-height: 400px;
     background-attachment: fixed;
     background-position: center;
