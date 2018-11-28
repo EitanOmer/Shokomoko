@@ -60,16 +60,21 @@ header hr {
 /*---------------------UNIVERSAL FOOTER---------------------*/
 footer {
     background-color: black;
-    padding: 12px;
+    padding: 20px;
     margin: 0;
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
 }
 
 footer p {
     margin: 0;
+    display:inline;
 }
 
+.toTop {
+    width: 22px;
+    float: left;
+}
 
 /*---------------------OTHER UNIVERSALS---------------------*/
 .invisibleDividor {
@@ -77,6 +82,8 @@ footer p {
     width: 0;
     margin: 0;
 }
+
+
 
 
 /*---------------------HOME---------------------*/
@@ -149,12 +156,21 @@ footer p {
     padding: 30px;
     margin:0;
 }
+
 form {
     margin-bottom: 20px;
 }
 input, textarea {
     border-radius: 7px;
+    background-color: rgb(248, 240, 228);
+    transition:0.3s;
+
 }
+input:focus, textarea:focus {
+    background-color: black;
+    color:white;
+}
+
 .type1Input {
     width: 331px;
     padding: 8px;
@@ -163,7 +179,6 @@ input, textarea {
     width: 700px;
     padding: 8px;
 }
-
 .formBtn {
     color: white;
     background-color: black;
