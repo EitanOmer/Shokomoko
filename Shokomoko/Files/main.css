@@ -1,9 +1,9 @@
 ﻿body {
-    /*font-family: ;*/
+    font-family: Arial, 'Times New Roman', 'sans serif', Verdana;
     margin: 0;
     padding: 0;
     color: #f7f7f7;
-    background-color: blanchedalmond;
+    background-color: #333;
 }
 
 /*---------------------UNIVERSAL HEADER---------------------*/
