@@ -60,9 +60,9 @@ header hr {
 /*---------------------UNIVERSAL FOOTER---------------------*/
 footer {
     background-color: black;
-    padding: 8px;
+    padding: 12px;
     margin: 0;
-    font-size: 11px;
+    font-size: 14px;
     text-align: center;
 }
 
@@ -111,8 +111,7 @@ footer p {
 }
 
 .division1Img {
-    width: 343px;
-    height: 250px;
+    width: 600px;
     margin-left: 20px;
 }
 
@@ -120,3 +119,20 @@ footer p {
     background-color: #141313;
     margin: 0;
 }
+.division2 table {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0 10px 0;
+}
+.division2 img {
+    width: 600px;
+}
+
+
+/*---------------------MAIN COURSES---------------------*/
+
+
+/*---------------------DESSERTS---------------------*/
+
+
+/*---------------------CONTACT---------------------*/
