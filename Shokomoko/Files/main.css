@@ -137,11 +137,53 @@ footer p {
 }
 
 
-/*---------------------MAIN COURSES---------------------*/
+/*---------------------MENUS (MAIN COURSES)---------------------*/
+.menu {
+    background-color: rgb(10, 26, 20);
+    background-image: url(Images/back2.jpg);
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.headingBox {
+    background-color: rgba(12, 25, 21, 0.46);
+    padding: 50px 0 50px 0;
+}
+.menu h1 {
+    margin: 0;
+    font-size: 40px;
+    text-decoration: none;
+}
+.menu table {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0 10px 0;
+    border-collapse: collapse;
+}
+.menu td {
+    width:50%;
+    padding:20px;
+}
+.menu img {
+    width: 600px;
+    border-radius: 5px;
+}
 
-
-/*---------------------DESSERTS---------------------*/
-
+.part1 {
+    background-color: rgb(10, 26, 20);
+    color: white;
+}
+.part2 {
+    background-color: mintcream;
+    color: black
+}
+.part3 {
+    background-color: midnightblue;
+    color: white;
+}
+.part4 {
+    background-color: rgb(169, 17, 1);
+    color: black;
+}
 
 /*---------------------CONTACT---------------------*/
 .contact {
@@ -153,7 +195,7 @@ footer p {
     font-size: 20px;
 }
 .contact div {
-    background-color: rgba(166,16,30,0.8);
+    background-color: rgba(166, 16, 30, 0.8);
     padding: 30px;
     margin:0;
 }
@@ -173,7 +215,7 @@ input:focus, textarea:focus {
 }
 
 .type1Input {
-    width: 331px;
+    width: 326px;
     padding: 8px;
 }
 .type2Input {
