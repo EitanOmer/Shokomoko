@@ -260,3 +260,5 @@ paket-files/
 __pycache__/
 *.pyc
 /Shokomoko/Shokomoko.zip
+/Shokomoko/Files.zip
+/Shokomoko/Files (3).zip
