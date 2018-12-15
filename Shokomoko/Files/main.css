@@ -1,4 +1,5 @@
 ﻿@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+
 body {
     font-family: 'Alef Hebrew', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
@@ -44,17 +45,8 @@ nav a {
     transition: color 0.3s;
 }
 
-nav a:hover {
+nav a:hover, .active {
     color: mediumpurple;
-}
-
-.active {
-    color: mediumpurple;
-}
-
-
-header hr {
-    margin: 0;
 }
 
 
@@ -84,27 +76,28 @@ footer p {
     margin: 0;
 }
 
-
+.divEnd {
+    margin: 0;
+}
 
 
 /*---------------------HOME---------------------*/
 .parralax {
     background-image: url("Images/steak.jpg");
-    min-height: 400px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    text-align: center;
 }
 
 .parralaxBox {
     background-color: rgba(12,25,21, 0.45);
     padding: 10px 0 10px 0;
     margin-top: 309px;
-}
 
-.parralax h1 {
+    text-align: center;
+}
+.parralaxBox h1 {
     margin: 0;
     padding: 0 7px 0 7px;
 }
@@ -113,14 +106,13 @@ footer p {
     background-color: #141313;
     margin: 0;
 }
-
 .division1 table {
-    padding-top: 20px;
+    padding: 20px 10px;
 }
-
-.division1Img {
+.division1 img {
     width: 600px;
     margin-left: 20px;
+    border-radius: 5px;
 }
 
 .division2 {
@@ -129,31 +121,37 @@ footer p {
 }
 .division2 table {
     width: 100%;
-    margin: 0;
-    padding: 10px 0 10px 0;
+    padding: 20px 0 20px 0;
+    text-align:center;
 }
+
 .division2 img {
     width: 600px;
+    border-radius: 5px;
 }
 
 
-/*---------------------MENUS (MAIN COURSES)---------------------*/
+/*---------------------MENUS---------------------*/
 .mainCourse {
     background-image: url(Images/back2.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     text-align: center;
 }
+
 .dessert {
     background-image: url(Images/back3.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     text-align: center;
 }
+
+
 .headingBox {
     background-color: rgba(12, 25, 21, 0.46);
     padding: 50px 0 50px 0;
 }
+
 .menu h1 {
     margin: 0;
     font-size: 40px;
@@ -212,6 +210,7 @@ input:focus, textarea:focus {
     width: 700px;
     padding: 8px;
 }
+
 .formBtn {
     color: white;
     background-color: black;
