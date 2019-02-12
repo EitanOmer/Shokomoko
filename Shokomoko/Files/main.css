@@ -1,5 +1,9 @@
 ﻿@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Alef Hebrew', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
@@ -38,7 +42,6 @@ nav ul {
     padding: 0 0 20px 0;
     overflow: hidden;
 }
-
 nav li {
     display: inline;
 }
@@ -53,7 +56,6 @@ nav a {
     text-decoration: none;
     transition: color 0.3s;
 }
-
 nav a:hover, .active {
     color: mediumpurple;
 }
@@ -63,13 +65,17 @@ nav a:hover, .active {
     margin: -32px 0 -10px 20px ;
 }
 .registration a {
+    background: none;
+    border: none;
     font-size: 13px;
     font-weight: bold;
     color: #aaaaaa;
     text-decoration: none;
+    outline:none;
 }
 .registration a:hover {
-    color: #aaaaaa;
+    color: #c1c0c0;
+    cursor: pointer;
 }
 
 /*---------------------UNIVERSAL FOOTER---------------------*/
@@ -102,6 +108,53 @@ footer p {
     margin: 0;
 }
 
+.backToTop {
+    /*style*/
+    display: none;
+    padding: 15px 19px;
+    border: 4px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    /*positioning*/
+    bottom: 15px;
+    left: 15px;
+    overflow: auto;
+    position: fixed;
+    z-index: 5;
+    /*text*/
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 25px;
+
+    transition: 0.5s;
+}
+.backToTop:hover {
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+
+.back_to_top {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    z-index: 9999;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: #f5f5f5;
+    color: #444;
+    cursor: pointer;
+    border-radius: 2px;
+    display: none;
+}
+
+    .back_to_top:hover {
+        background: #e9ebec;
+    }
+
+.back_to_top-show {
+    display: block;
+}
 
 /*---------------------HOME---------------------*/
 .parralax {
@@ -219,10 +272,7 @@ input, textarea {
     transition:0.3s;
 
 }
-input:focus, textarea:focus {
-    background-color: black;
-    color: white;
-}
+
 
 .type1Input {
     width: 326px;
@@ -233,6 +283,11 @@ input:focus, textarea:focus {
     width: 700px;
     padding: 8px;
     border-width: 3px;
+}
+.type1Input:focus, .type2Input:focus {
+    background-color: black;
+    color: white;
+    outline: none;
 }
 
 .formBtn {
@@ -251,4 +306,70 @@ input:focus, textarea:focus {
 .formBtn:hover {
     background-color: rgb(16, 105, 166);
     cursor: pointer;
+}
+
+
+/*---------------------LOGIN/SIGNUP---------------------*/
+.logSign {
+    background-color: rgb(166, 16, 16);
+}
+.logSignBox {
+    width: 40%;
+    margin: 2.5% auto 0 auto;
+    padding: 10px 3%;
+    border-radius: 3px;
+    background-color: #1e2833;
+    box-shadow: 5px 3px 100px black;
+    font-size: smaller;
+}
+.backToHome {
+    float: left;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin: 2px -2px 0 -3.5%;
+    border:none;
+    outline:none;
+    background: none;
+    cursor:pointer;
+}
+
+.logSignInput {
+    width: 85%;
+    margin: 10px 0 20px 0;
+    padding: 15px;
+    border: hidden;
+    background-image: linear-gradient(to right, rgb(27, 36, 46), rgb(26, 34, 43));
+    background-color: #1e2833;
+    border-bottom: solid #171e26;
+    border-radius: 0;
+    font-size: 15px;
+    transition: 0.6s;
+}
+.logSignInput:focus {
+    outline: none;
+    transform: scale(1.03);
+    color: white;
+}
+
+.logSignSubmit {
+    width: 92%;
+    margin: 30px 0;
+    padding: 15px;
+    border: hidden;
+    outline: none;
+    box-shadow: 1px 1px 20px black;
+    background-color: #214a80;
+    color: white;
+    font-size: 18px;
+    border-radius: 2px;
+    
+
+    transition: 0.5s;
+}
+.logSignSubmit:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+    box-shadow: 5px 5px 60px black;
 }

@@ -1,26 +1,29 @@
-// JavaScript source code
-
-
 /*--------------------------------------FORMS--------------------------------------*/
-
-
 function isName(element = "") {
-    if (element == "" || element.length < 2)
+    if (element == "" || element.length < 2)    // not blank or has names smaller than 2 letters (e.g 'им')
         return false;
     else {
         var LegalChars = new RegExp("^[a-zA-Z\-\u0590-\u05FF ']+$");
         return LegalChars.test(element);
     }
 
-    return true;
+    //return true;
 }
 function isEmail(element = "") {
-    for (var i = 0; i < element.length; i++) {
-        if (element[i] == '@' && element.length - (i+1) > 4)
-            return true;
+    var valid = false;
+
+    for (var i = 0; i < element.length && !valid; i++) {
+        if (element[i] == '@')  // has '@'
+            while (++i < element.length) {
+                if (element[i] == '.' && element.length - i > 1) // has '.' after '@' with at least 1 character in between (for '@gmail'/ '@walla' etc.)
+                    while (++i < element.length) {
+                        if (element.length - i >= 3)    // has at least 3 characters after '.' (for '.com'/ '.co.il' etc.)
+                            valid = true;
+                    }
+            }
     }
 
-    return false;
+    return valid;
 }
 function isPass(element = "") {
     if (element.Length >= 6 && element.Length <= 16) {
