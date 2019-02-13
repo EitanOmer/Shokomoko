@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" type="image/png" href="images/fav.png" />
-    <link rel="stylesheet" type="text/css" href="main.css" />
-    <script src="main.js"></script>
-    <title>צור קשר</title>
+    <link rel="stylesheet" type="text/css" href="CSS/main.css" />
+    <script src="Scripts/main.js"></script>
 
+    <title>צור קשר</title>
 </head>
 <body dir="rtl">
     <a name="top"></a>
@@ -48,15 +48,15 @@
                 <input class="type2Input" type="text" name="subject" id="subject" placeholder="נושא ההודעה" onkeyup="validField('subject')" />
                 <br /><br />
 
-                <textarea class="type2Input" rows="4" cols="50" name="message" id="message" placeholder="תוכן ההודעה" onkeyup="validField('message')" ></textarea>
+                <textarea class="type2Input" rows="4" cols="50" name="message" id="message" placeholder="תוכן ההודעה" onkeyup="validField('message')"></textarea>
                 <br /><br />
 
                 <input class="formBtn" type="submit" value="שלח" />
                 <input class="formBtn" type="reset" value="נקה" />
             </form>
 
-            <p id="errorMessage" >לא כל הערכים שהוכנסו נכונים</p>
-            <p id="successMessage" >הטופס נשלח בהצלחה</p>
+            <p id="errorMessage">לא כל הערכים שהוכנסו נכונים</p>
+            <p id="successMessage">הטופס נשלח בהצלחה</p>
             <script>
                 document.getElementById("errorMessage").style.display = 'none';
                 document.getElementById("successMessage").style.display = 'none';
@@ -69,5 +69,9 @@
         <p>כל הזכויות לא שמורות לאיתן אפשטיין ולעומר גביזון 2018</p>
         <a href="#top"><img src="Images/upArrow.png" alt="Go to Top" class="toTop" /></a>
     </footer>
+
+
+    <!-----------------------------------Scripts----------------------------------->
+    <script src="Scripts/logSignForms.js"></script>
 </body>
 </html>

@@ -97,6 +97,75 @@ footer p {
     float: left;
 }
 
+/*---------------------UNIVERSAL LOGIN/SIGNUP---------------------*/
+.logSignContainer {
+    background-color: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+.logSignBox {
+    width: 40%;
+    margin: 2.5% auto 0 auto;
+    padding: 10px 3%;
+    border-radius: 3px;
+    background-color: #1e2833;
+    box-shadow: 5px 3px 100px 70px rgba(166, 16, 16, 0.9);
+    font-size: smaller;
+}
+.backToHome {
+    float: left;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin: 2px -2px 0 -3.5%;
+    border:none;
+    outline:none;
+    background: none;
+    cursor:pointer;
+}
+
+.logSignInput {
+    width: 85%;
+    margin: 10px 0 20px 0;
+    padding: 15px;
+    border: hidden;
+    background-image: linear-gradient(to right, rgb(27, 36, 46), rgb(26, 34, 43));
+    background-color: #1e2833;
+    border-bottom: solid #171e26;
+    border-radius: 0;
+    font-size: 15px;
+    transition: 0.6s;
+}
+.logSignInput:focus {
+    outline: none;
+    transform: scale(1.03);
+    color: white;
+}
+
+.logSignSubmit {
+    width: 92%;
+    margin: 30px 0;
+    padding: 15px;
+    border: hidden;
+    outline: none;
+    box-shadow: 1px 1px 20px black;
+    background-color: #214a80;
+    color: white;
+    font-size: 18px;
+    border-radius: 2px;
+    
+
+    transition: 0.5s;
+}
+.logSignSubmit:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+    box-shadow: 5px 5px 60px black;
+}
+
+
 /*---------------------OTHER UNIVERSALS---------------------*/
 .invisibleDividor {
     height: 0;
@@ -110,7 +179,6 @@ footer p {
 
 .backToTop {
     /*style*/
-    display: none;
     padding: 15px 19px;
     border: 4px solid rgba(255, 255, 255, 0.4);
     border-radius: 50px;
@@ -131,34 +199,25 @@ footer p {
     border-color: rgba(255, 255, 255, 0.8);
 }
 
-
-.back_to_top {
+.logContainer {
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+.logData {
     position: fixed;
-    bottom: 80px;
-    right: 40px;
-    z-index: 9999;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-    background: #f5f5f5;
-    color: #444;
-    cursor: pointer;
-    border-radius: 2px;
-    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
-    .back_to_top:hover {
-        background: #e9ebec;
-    }
-
-.back_to_top-show {
-    display: block;
-}
 
 /*---------------------HOME---------------------*/
 .parralax {
-    background-image: url("Images/steak.jpg");
+    background-image: url("../Images/steak.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -208,14 +267,14 @@ footer p {
 
 /*---------------------MENUS---------------------*/
 .mainCourse {
-    background-image: url(Images/back2.jpg);
+    background-image: url(../Images/back2.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     text-align: center;
 }
 
 .dessert {
-    background-image: url(Images/back3.jpg);
+    background-image: url(../Images/back3.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     text-align: center;
@@ -251,7 +310,7 @@ footer p {
 /*---------------------CONTACT---------------------*/
 .contact {
     text-align: center;
-    background-image: url(Images/Logo.png);
+    background-image: url(../Images/Logo.png);
     background-size: contain;
     background-position: center;
 
@@ -306,70 +365,4 @@ input, textarea {
 .formBtn:hover {
     background-color: rgb(16, 105, 166);
     cursor: pointer;
-}
-
-
-/*---------------------LOGIN/SIGNUP---------------------*/
-.logSign {
-    background-color: rgb(166, 16, 16);
-}
-.logSignBox {
-    width: 40%;
-    margin: 2.5% auto 0 auto;
-    padding: 10px 3%;
-    border-radius: 3px;
-    background-color: #1e2833;
-    box-shadow: 5px 3px 100px black;
-    font-size: smaller;
-}
-.backToHome {
-    float: left;
-    font-size: 14px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    margin: 2px -2px 0 -3.5%;
-    border:none;
-    outline:none;
-    background: none;
-    cursor:pointer;
-}
-
-.logSignInput {
-    width: 85%;
-    margin: 10px 0 20px 0;
-    padding: 15px;
-    border: hidden;
-    background-image: linear-gradient(to right, rgb(27, 36, 46), rgb(26, 34, 43));
-    background-color: #1e2833;
-    border-bottom: solid #171e26;
-    border-radius: 0;
-    font-size: 15px;
-    transition: 0.6s;
-}
-.logSignInput:focus {
-    outline: none;
-    transform: scale(1.03);
-    color: white;
-}
-
-.logSignSubmit {
-    width: 92%;
-    margin: 30px 0;
-    padding: 15px;
-    border: hidden;
-    outline: none;
-    box-shadow: 1px 1px 20px black;
-    background-color: #214a80;
-    color: white;
-    font-size: 18px;
-    border-radius: 2px;
-    
-
-    transition: 0.5s;
-}
-.logSignSubmit:hover {
-    cursor: pointer;
-    transform: scale(1.04);
-    box-shadow: 5px 5px 60px black;
 }

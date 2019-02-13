@@ -4,17 +4,42 @@
     <meta charset="utf-8" />
 
     <link rel="shortcut icon" type="image/png" href="images/fav.png" />
-    <link rel="stylesheet" type="text/css" href="main.css" />
-    <script src="Script.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/main.css" />
+    <script src="Scripts/main.js"></script>
 
     <title>בית</title>
 </head>
 <body dir="rtl">
-    <a href="#top" id="backToTop">
-        <div class="backToTop" id="backToTop">
-            <span>▲</span>
+    <div class="logSignContainer" id="logSignContainer">
+        <div class="logSignBox" id="logInBox">
+            <span class="backToHome" onclick="toggleLogIn(); toggleContainer();">&times;</span>
+            <div align="center">
+                <img src="Images/fav - transperant.png" alt="shokomoko-logo" width="200" />
+            </div>
+            <h1 align="center">בדיקת סטטוס מקום שהוזמן במסעדת שוקומוקו</h1>
+
+            <form align="center">
+                <input class="logSignInput" type="text" name="name" id="name" placeholder="שם" />
+
+                <input class="logSignInput" type="text" name="pass" id="pass" placeholder="סיסמא" />
+
+                <input class="logSignSubmit" type="submit" value="בדיקה" />
+            </form>
         </div>
-    </a>
+        <div class="logSignBox" id="signUpBox">
+            <span class="backToHome" onclick="toggleContainer(); toggleSignUp()">&times;</span>
+            <div align="center">
+                <img src="Images/fav - transperant.png" alt="shokomoko-logo" width="200" />
+            </div>
+            <h1 align="center">הזמנת מקום במסעדת שוקומוקו</h1>
+        </div>
+    </div>
+    <script>
+        document.getElementById('logSignContainer').style.display = 'none';
+        document.getElementById('logInBox').style.display = 'none';
+        document.getElementById('signUpBox').style.display = 'none';
+    </script>
+
 
     <a name="top"></a>
     <header>
@@ -31,8 +56,8 @@
             </ul>
 
             <ul class="registration">
-                <li><a href="">הזמנת מקום</a></li>
-                <li><a href="logIn.HTML">בדיקת מצב מקום מוזמן</a></li>
+                <li><a onclick="toggleContainer(); toggleSignUp();">הזמנת מקום</a></li>
+                <li><a onclick="toggleContainer(); toggleLogIn();">בדיקת מצב מקום מוזמן</a></li>
             </ul>
         </nav>
         <hr class="divEnd" />
@@ -93,7 +118,9 @@
                 <tr>
                     <td>
                         <h2>טקסס בריסקט</h2>
-                        <p>בריסקט מעושן, בצל מקורמל, עגבניה, מיונז חרדל שום, ציר בריסקט לטבילה</p>
+                        <p>
+                            בריסקט מעושן, בצל מקורמל, עגבניה, מיונז חרדל שום, ציר בריסקט לטבילה
+                        </p>
                     </td>
                     <td>
                         <img src="images/main course/texas.jpg" alt="texas" />
@@ -107,7 +134,17 @@
 
     <footer>
         <p>כל הזכויות לא שמורות לאיתן אפשטיין ולעומר גביזון 2018</p>
-        <a href="#top"><img src="Images/upArrow.png" alt="Go to Top" class="toTop" /></a>
     </footer>
+
+
+    <a href="#top" id="backToTop">
+        <div class="backToTop">
+            <span>▲</span>
+        </div>
+    </a>
+
+    <!-----------------------------------Scripts----------------------------------->
+    <script src="Scripts/toTop.js"></script>
+    <script src="Scripts/logSignForms.js"></script>
 </body>
 </html>

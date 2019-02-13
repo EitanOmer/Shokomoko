@@ -3,11 +3,9 @@ function isName(element = "") {
     if (element == "" || element.length < 2)    // not blank or has names smaller than 2 letters (e.g 'им')
         return false;
     else {
-        var LegalChars = new RegExp("^[a-zA-Z\-\u0590-\u05FF ']+$");
-        return LegalChars.test(element);
+        var legalChars = new RegExp("^[a-zA-Z\-\u0590-\u05FF ']+$");
+        return legalChars.test(element);
     }
-
-    //return true;
 }
 function isEmail(element = "") {
     var valid = false;
@@ -21,6 +19,10 @@ function isEmail(element = "") {
                             valid = true;
                     }
             }
+    }
+    for (var i = 0; i < element.length && valid; i++) {
+        var legalChars = new RegExp("^[a-zA-Z0-9@.']+$");   // only numbers, English letters, '.', '@'
+        valid = legalChars.test(element);
     }
 
     return valid;
@@ -46,15 +48,24 @@ function isPass(element = "") {
     }
     return false;
 }
-function isPhone(element = 0) {
+function isPhone(element = "") {
+    var phoneNumber = "";
 
+    for (var i = 0; i < element.length; i++) {
+        if (!isNaN(element[i]))
+            phoneNumber += element[i];
+    }
+    if (phoneNumber.length != 7)
+        return false;
+
+    return true;
 }
-function blank(element = "") {
-    if (element == "" || element.length < 5)
+function blank(element = "", minLength) {
+    if (element.length < minLength)
         return true;
-
     return false;
 }
+
 
 function validField(checkType = "") {
     var element = document.getElementById(checkType);
@@ -96,8 +107,26 @@ function validField(checkType = "") {
 
             break;
 
+        case 'phone':
+            if (isPhone(element.value)) {
+                element.style.borderColor = "rgb(50,205,50)";
+                element.style.borderWidth = "3px";
+            }
+            else {
+                element.style.borderColor = "rgb(255, 72, 0)";
+                element.style.borderWidth = "5px";
+            }
+
+            break;
+
         default:
-            if (!blank(element.value)) {
+            var minLength;
+            if (checkType == 'subject')
+                minLength = 5;
+            else if (checkType == 'message')
+                minLength = 25;
+
+            if (!blank(element.value, minLength)) {
                 element.style.borderColor = "rgb(50,205,50)";
                 element.style.borderWidth = "3px";
             }
