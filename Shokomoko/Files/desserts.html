@@ -9,6 +9,45 @@
     <title>קינוחים</title>
 </head>
 <body dir="rtl">
+    <div class="logSignContainer" id="logSignContainer">
+        <div class="logSignBox" id="logInBox">
+            <span class="backToHome" onclick="toggleLogIn(); toggleContainer();">&times;</span>
+            <div align="center">
+                <img src="Images/fav - transperant.png" alt="shokomoko-logo" width="200" />
+            </div>
+            <h1 align="center">בדיקת סטטוס מקום שהוזמן במסעדת שוקומוקו</h1>
+
+            <form align="center">
+                <input class="logSignInput" type="text" name="name" id="name" placeholder="שם" />
+
+                <input class="logSignInput" type="text" name="pass" id="pass" placeholder="סיסמא" />
+
+                <input class="logSignSubmit" type="submit" value="בדיקה" />
+            </form>
+        </div>
+        <div class="logSignBox" id="signUpBox">
+            <span class="backToHome" onclick="toggleContainer(); toggleSignUp()">&times;</span>
+            <div align="center">
+                <img src="Images/fav - transperant.png" alt="shokomoko-logo" width="200" />
+            </div>
+            <h1 align="center">הזמנת מקום במסעדת שוקומוקו</h1>
+        </div>
+    </div>
+    <script>
+        document.getElementById('logSignContainer').style.display = 'none';
+        document.getElementById('logInBox').style.display = 'none';
+        document.getElementById('signUpBox').style.display = 'none';
+    </script>
+
+    <a href="#top" id="backToTop">
+        <div class="backToTop">
+            <span>▲</span>
+        </div>
+    </a>
+    <script>
+        document.getElementById('backToTop').style.opacity = 0;
+    </script>
+
     <a name="top"></a>
     <header>
         <div align="center">
@@ -24,8 +63,8 @@
             </ul>
 
             <ul class="registration">
-                <li><a href="">הזמנת מקום</a></li>
-                <li><a href="logIn.HTML">בדיקת מצב מקום מוזמן</a></li>
+                <li><a onclick="toggleContainer(); toggleSignUp();">הזמנת מקום</a></li>
+                <li><a onclick="toggleContainer(); toggleLogIn();">בדיקת מצב מקום מוזמן</a></li>
             </ul>
         </nav>
         <hr class="divEnd" />
@@ -101,12 +140,6 @@
         <p>כל הזכויות לא שמורות לאיתן אפשטיין ולעומר גביזון 2018</p>
     </footer>
 
-
-    <a href="#top" id="backToTop">
-        <div class="backToTop">
-            <span>▲</span>
-        </div>
-    </a>
 
 
     <!-----------------------------------Scripts----------------------------------->

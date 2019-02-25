@@ -9,6 +9,61 @@
     <title>צור קשר</title>
 </head>
 <body dir="rtl">
+    <div class="logSignContainer" id="logSignContainer">
+        <div class="logSignBox" id="logInBox">
+            <span class="backToHome" onclick="toggleLogIn(); toggleContainer();">&times;</span>
+            <div align="center">
+                <img src="Images/fav - transperant.png" alt="shokomoko-logo" width="200" />
+            </div>
+            <h1 align="center">בדיקת סטטוס מקום שהוזמן במסעדת שוקומוקו</h1>
+
+            <form align="center">
+                <input class="logSignInput" type="text" name="name" id="name" placeholder="שם" />
+
+                <input class="logSignInput" type="text" name="pass" id="pass" placeholder="סיסמא" />
+
+                <input class="logSignSubmit" type="submit" value="בדיקה" />
+            </form>
+        </div>
+        <div class="logSignBox" id="signUpBox">
+            <span class="backToHome" onclick="toggleContainer(); toggleSignUp()">&times;</span>
+            <div align="center">
+                <img src="Images/fav - transperant.png" alt="shokomoko-logo" width="200" />
+            </div>
+            <h1 align="center">הזמנת מקום במסעדת שוקומוקו</h1>
+
+            <form align="center">
+                <input class="logSignInput" type="text" name="name" id="name" placeholder="שם" />
+
+                <input class="logSignInput" type="text" name="pass" id="pass" placeholder="סיסמא" />
+
+                <select class="logSignInput" name="peopleAmt">
+                    <option value="מספר סועדים" selected>--מספר סועדים--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+
+                <select class="logSignInput" name="tableLoc">
+                    <option value="" selected>--בחר את מיקום השולחן--</option>
+                    <option value="out">בחוץ</option>
+                    <option value="in">בפנים</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('logSignContainer').style.display = 'none';
+        document.getElementById('logInBox').style.display = 'none';
+        document.getElementById('signUpBox').style.display = 'none';
+    </script>
+
+
     <a name="top"></a>
     <header>
         <div align="center">
@@ -24,8 +79,8 @@
             </ul>
 
             <ul class="registration">
-                <li><a href="">הזמנת מקום</a></li>
-                <li><a href="logIn.HTML">בדיקת מצב מקום מוזמן</a></li>
+                <li><a onclick="toggleContainer(); toggleSignUp();">הזמנת מקום</a></li>
+                <li><a onclick="toggleContainer(); toggleLogIn();">בדיקת מצב מקום מוזמן</a></li>
             </ul>
         </nav>
         <hr class="divEnd" />

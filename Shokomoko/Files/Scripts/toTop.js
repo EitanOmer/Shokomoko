@@ -1,7 +1,6 @@
 // JavaScript source code for the back to top button
 
 var element = document.getElementById('backToTop').style;
-element.opacity = 0;
 var toTopDisplayed = false;
 
 window.onscroll = function () {
