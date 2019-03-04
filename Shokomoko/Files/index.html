@@ -18,10 +18,10 @@
             </div>
             <h1 align="center">בדיקת סטטוס מקום שהוזמן במסעדת שוקומוקו</h1>
 
-            <form align="center">
-                <input class="logSignInput" type="text" name="name" id="name" placeholder="שם" />
+            <form align="center" id="logInForm" >
+                <input class="logSignInput" type="text" name="logName" id="logName" placeholder="שם" onkeydown="validField('name', 'logName') "/>
 
-                <input class="logSignInput" type="text" name="pass" id="pass" placeholder="סיסמא" />
+                <input class="logSignInput" type="password" name="logPass" id="logPass" placeholder="סיסמא" onkeydown="validField('pass', 'logPass')" />
 
                 <input class="logSignSubmit" type="submit" value="בדיקה" />
             </form>
@@ -32,6 +32,35 @@
                 <img src="Images/fav - transperant.png" alt="shokomoko-logo" width="200" />
             </div>
             <h1 align="center">הזמנת מקום במסעדת שוקומוקו</h1>
+            <form align="center">
+                <input class="logSignInput" type="email" name="signEmail" id="signEmail" placeholder="אי-מייל" onkeyup="validField('email', 'signEmail')" />
+
+                <input class="logSignInput" type="password" name="signPass" id="signPass" placeholder="סיסמא" onkeyup="validField('pass','signPass')" />
+                <input class="logSignInput" type="password" name="signPassVar" id="signPassVar" placeholder="סיסמא" onkeyup="validField('passVar','signPassVar')" />
+
+                <select class="logSignInput" name="eaters">
+                    <option value="מספר סועדים" selected>מספר סועדים</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+
+                <select class="logSignInput" name="place">
+                    <option value="מיקום השולחן" selected>מיקום השולחן</option>
+                    <option value="בחוץ">בחוץ</option>
+                    <option value="בפנים">בפנים</option>
+                </select>
+                <h3>תרצה לקבל התראות אל המייל לגבי הנחות?</h3>
+                <input type="radio" name="choice" value="yes" checked> כן
+                <input type="radio" name="choice" value="no"> לא<br>
+
+                <input class="logSignSubmit" type="submit" value="שלח" />
+            </form>
         </div>
     </div>
     <script>

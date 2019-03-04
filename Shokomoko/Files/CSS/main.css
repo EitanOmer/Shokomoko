@@ -102,7 +102,7 @@ footer p {
     background-color: none;
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
 }
 .logSignBox {
     width: 40%;
@@ -134,8 +134,9 @@ footer p {
     background-image: linear-gradient(to right, rgb(27, 36, 46), rgb(26, 34, 43));
     background-color: #1e2833;
     border-bottom: solid #171e26;
-    border-radius: 0;
+    border-radius: 5px;
     font-size: 15px;
+    
     transition: 0.6s;
     color: white;
 }

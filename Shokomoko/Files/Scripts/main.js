@@ -10,15 +10,27 @@ function isName(element = "") {
 function isEmail(element = "") {
     var valid = false;
 
+    var atIndex, dotIndex;
+
     for (var i = 0; i < element.length && !valid; i++) {
-        if (element[i] == '@')  // has '@'
+        // has '@'
+        if (element[i] == '@') {
+            atIndex = i;
+
             while (++i < element.length) {
-                if (element[i] == '.' && element.length - i > 1) // has '.' after '@' with at least 1 character in between (for '@gmail'/ '@walla' etc.)
-                    while (++i < element.length) {
-                        if (element.length - i >= 3)    // has at least 3 characters after '.' (for '.com'/ '.co.il' etc.)
-                            valid = true;
-                    }
+                // has '.' after '@' with at least 1 character in between (for '@gmail'/ '@walla' etc.)
+                if (element[i] == '.') {
+                    dotIndex = i;
+
+                    if (dotIndex - atIndex > 1)
+                        while (++i < element.length) {
+                            // has at least 3 characters after '.' (for '.com'/ '.co.il' etc.)
+                            if (element.length - i >= 3) 
+                                valid = true;
+                        }
+                }
             }
+        }
     }
     for (var i = 0; i < element.length && valid; i++) {
         var legalChars = new RegExp("^[a-zA-Z0-9@.']+$");   // only numbers, English letters, '.', '@'
@@ -28,12 +40,12 @@ function isEmail(element = "") {
     return valid;
 }
 function isPass(element = "") {
-    if (element.Length >= 6 && element.Length <= 16) {
+    if (element.length >= 6 && element.length <= 16) {
         var numbers = 0;
         var letters = 0;
         var others = 0;
 
-        for (var i = 0; i < element.Length; i++) {
+        for (var i = 0; i < element.length; i++) {
             if (element[i] >= '0' && element[i] <= '9')
                 ++numbers;
             else if ((element[i] <= 'z' && element[i] >= 'a') ||
@@ -67,8 +79,13 @@ function blank(element = "", minLength) {
 }
 
 
-function validField(checkType = "") {
-    var element = document.getElementById(checkType);
+function validField(checkType = "", id = "") {
+    var element;
+
+    if (id == "")
+        element = document.getElementById(checkType);
+    else
+        element = document.getElementById(id);
 
     switch (checkType) {
         case 'name':
@@ -97,6 +114,20 @@ function validField(checkType = "") {
 
         case 'pass':
             if (isPass(element.value)) {
+                element.style.borderColor = "rgb(50,205,50)";
+                element.style.borderWidth = "3px";
+            }
+            else {
+                element.style.borderColor = "rgb(255, 72, 0)";
+                element.style.borderWidth = "5px";
+            }
+
+            break;
+
+        case 'passVar':
+            var element2 = document.getElementById("signPass");
+
+            if (element.value == element2.value) {
                 element.style.borderColor = "rgb(50,205,50)";
                 element.style.borderWidth = "3px";
             }
@@ -162,17 +193,8 @@ function formValid(formId) {
     }
 
     // reset form
-    for (var i = 0; i < formLength; ++i) {
-        var element = document.getElementById(formId).elements[i];
-
-        if (element.style.borderWidth == "3px") {
-            if (element.tagName == "TEXTAREA")
-                element.style.borderColor = "lightgrey";
-            else
-                element.style.borderColor = "white";
-            element.value = "";
-        }
-    }
+    if (formId == "contactForm")
+        resetContactForm(formId);
 
 
     errorMessage.style.display = "none";
@@ -184,4 +206,20 @@ function formValid(formId) {
     successMessage.style.color = "rgb(50, 205, 50)";
 
     return true;
+}
+
+function resetContactForm(formId) {
+    var formLength = document.getElementById(formId).length;
+
+    for (var i = 0; i < formLength; ++i) {
+        var element = document.getElementById(formId).elements[i];
+
+        if (element.style.borderWidth == "3px") {
+            if (element.tagName == "TEXTAREA")
+                element.style.borderColor = "lightgrey";
+            else
+                element.style.borderColor = "white";
+            element.value = "";
+        }
+    }
 }
