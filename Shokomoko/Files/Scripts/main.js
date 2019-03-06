@@ -17,19 +17,21 @@ function isEmail(element = "") {
         if (element[i] == '@') {
             atIndex = i;
 
-            while (++i < element.length) {
-                // has '.' after '@' with at least 1 character in between (for '@gmail'/ '@walla' etc.)
-                if (element[i] == '.') {
-                    dotIndex = i;
+            // '@' is not the first character
+            if (atIndex > 1)
+                while (++i < element.length) {
+                    // has '.' after '@' with at least 1 character in between (for '@gmail'/ '@walla' etc.)
+                    if (element[i] == '.') {
+                        dotIndex = i;
 
-                    if (dotIndex - atIndex > 1)
-                        while (++i < element.length) {
-                            // has at least 3 characters after '.' (for '.com'/ '.co.il' etc.)
-                            if (element.length - i >= 3) 
-                                valid = true;
-                        }
+                        if (dotIndex - atIndex > 1)
+                            while (++i < element.length) {
+                                // has at least 3 characters after '.' (for '.com'/ '.co.il' etc.)
+                                if (element.length - i >= 3)
+                                    valid = true;
+                            }
+                    }
                 }
-            }
         }
     }
     for (var i = 0; i < element.length && valid; i++) {

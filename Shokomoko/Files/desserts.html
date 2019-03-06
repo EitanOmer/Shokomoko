@@ -13,21 +13,24 @@
         <div class="logSignBox" id="logInBox">
             <span class="backToHome" onclick="toggleLogIn(); toggleContainer();">&times;</span>
             <span class="toSignUp" onclick="toggleLogIn(); toggleSignUp();">הירשם</span>
+
             <div align="center">
                 <img src="Images/fav - transperant.png" alt="shokomoko-logo" width="200" />
             </div>
             <h1 align="center">בדיקת סטטוס מקום שהוזמן במסעדת שוקומוקו</h1>
 
             <form align="center" id="logInForm">
-                <input class="logSignInput" type="text" name="logName" id="logName" placeholder="שם" onkeydown="validField('name', 'logName') " />
+                <input class="logSignInput" type="email" name="logEmail" id="logEmail" placeholder="אי-מייל" onkeyup="validField('email', 'logEmail')" dir="ltr" />
 
-                <input class="logSignInput" type="password" name="logPass" id="logPass" placeholder="סיסמא" onkeydown="validField('pass', 'logPass')" />
+                <input class="logSignInput" type="password" name="logPass" id="logPass" placeholder="סיסמא" onkeyup="validField('pass', 'logPass')" />
 
                 <input class="logSignSubmit" type="submit" value="בדיקה" />
             </form>
         </div>
         <div class="logSignBox" id="signUpBox">
             <span class="backToHome" onclick="toggleContainer(); toggleSignUp()">&times;</span>
+            <span class="toSignUp" onclick="toggleSignUp(); toggleLogIn();">התחבר</span>
+
             <div align="center">
                 <img src="Images/fav - transperant.png" alt="shokomoko-logo" width="200" />
             </div>
