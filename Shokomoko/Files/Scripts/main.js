@@ -61,16 +61,34 @@ function isPass(element = "") {
     return false;
 }
 function isPhone(element = "") {
-    var phoneNumber = "";
+    if (element.length == 12)
+        return true;
+    return false;
+}
+function idCheck(IDnum = "") {
+    var id = IDnum;
 
-    for (var i = 0; i < element.length; i++) {
-        if (!isNaN(element[i]))
-            phoneNumber += element[i];
+    if (id.length >= 5 && id.length <= 9 && !isNaN(id)) {
+        while (id.length < 9)
+            id = '0' + id;
+
+
+        var sum = 0;
+        for (var i = 0, j = 1; i < id.length; i++) {
+            var curNum = parseInt(id[i], 10);
+            var m = (curNum * j).toString();
+
+
+            for (var k = 0; k < m.length; k++)
+                sum += parseInt(m[k]);
+
+            j = (j == 1) ? 2 : 1;
+        }
+
+        if (sum % 10 == 0)
+            return true;
     }
-    if (phoneNumber.length != 7)
-        return false;
-
-    return true;
+    return false;
 }
 function blank(element = "", minLength) {
     if (element.length < minLength)
@@ -127,7 +145,7 @@ function validField(checkType = "", id = "") {
         case 'passVar':
             var element2 = document.getElementById("signPass");
 
-            if (element.value == element2.value) {
+            if (element.value == element2.value && element.value.length >= 6) {
                 element.style.borderColor = "rgb(50,205,50)";
                 element.style.borderWidth = "3px";
             }
@@ -140,6 +158,18 @@ function validField(checkType = "", id = "") {
 
         case 'phone':
             if (isPhone(element.value)) {
+                element.style.borderColor = "rgb(50,205,50)";
+                element.style.borderWidth = "3px";
+            }
+            else {
+                element.style.borderColor = "rgb(255, 72, 0)";
+                element.style.borderWidth = "5px";
+            }
+
+            break;
+
+        case 'id':
+            if (idCheck(element.value)) {
                 element.style.borderColor = "rgb(50,205,50)";
                 element.style.borderWidth = "3px";
             }
@@ -222,4 +252,33 @@ function resetContactForm(formId) {
             element.value = "";
         }
     }
+}
+
+
+function completePhoneNum() {
+    var keynum = event.keyCode || event.charCode;
+
+    if (keynum != 8 && keynum != 46) {
+        var phoneN = document.getElementById('phone').value;
+        if (phoneN.length == 3 || phoneN.length == 7) {
+            document.getElementById('phone').value += '-';
+        }
+    }
+}
+function deleteChars() {
+    var phoneN = document.getElementById('phone').value;
+    var sliceAt = -1;
+
+    var i = phoneN.length > 12 ? 12 : phoneN.length;
+    while (i >= 0) {
+        if (!(phoneN[i] >= '0' && phoneN[i] <= '9') && i != 3 && i != 7)
+            sliceAt = i;
+        --i;
+    }
+
+    if (sliceAt < 0)
+        sliceAt = 12;
+    else
+        sliceAt += (sliceAt == 3 || sliceAt == 7) ? 1 : 0;
+    document.getElementById('phone').value = phoneN.slice(0, sliceAt);
 }

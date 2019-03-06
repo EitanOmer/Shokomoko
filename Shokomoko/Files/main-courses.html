@@ -12,12 +12,13 @@
     <div class="logSignContainer" id="logSignContainer">
         <div class="logSignBox" id="logInBox">
             <span class="backToHome" onclick="toggleLogIn(); toggleContainer();">&times;</span>
+            <span class="toSignUp" onclick="toggleLogIn(); toggleSignUp();">הירשם</span>
             <div align="center">
                 <img src="Images/fav - transperant.png" alt="shokomoko-logo" width="200" />
             </div>
             <h1 align="center">בדיקת סטטוס מקום שהוזמן במסעדת שוקומוקו</h1>
 
-            <form align="center">
+            <form align="center" id="logInForm">
                 <input class="logSignInput" type="text" name="logName" id="logName" placeholder="שם" onkeydown="validField('name', 'logName') " />
 
                 <input class="logSignInput" type="password" name="logPass" id="logPass" placeholder="סיסמא" onkeydown="validField('pass', 'logPass')" />
@@ -32,10 +33,14 @@
             </div>
             <h1 align="center">הזמנת מקום במסעדת שוקומוקו</h1>
             <form align="center">
-                <input class="logSignInput" type="email" name="signEmail" id="signEmail" placeholder="אי-מייל" onkeyup="validField('email', 'signEmail')" />
+                <input class="logSignInput" type="email" name="signEmail" id="signEmail" placeholder="אי-מייל" dir="ltr" onkeyup="validField('email', 'signEmail')" />
 
-                <input class="logSignInput" type="password" name="signPass" id="signPass" placeholder="סיסמא" onkeyup="validField('pass','signPass')" />
-                <input class="logSignInput" type="password" name="signPassVar" id="signPassVar" placeholder="סיסמא" onkeyup="validField('passVar','signPassVar')" />
+                <input class="logSignInput" type="password" name="signPass" id="signPass" placeholder="סיסמא" onkeyup="validField('pass', 'signPass'); validField('passVar','signPassVar')" />
+                <input class="logSignInput" type="password" name="signPassVar" id="signPassVar" placeholder="וידוי סיסמא" onkeyup="validField('passVar','signPassVar')" />
+
+                <input class="logSignInput" type="tel" name="phone" id="phone" placeholder="050-000-0000" dir="ltr" onkeydown="completePhoneNum()" onkeyup="deleteChars(); validField('phone')" />
+                <input class="logSignInput" type="number" name="idNum" id="idNum" placeholder="תעודת זהות" dir="ltr" onkeyup="validField('id', 'idNum')" />
+
 
                 <select class="logSignInput" name="eaters">
                     <option value="מספר סועדים" selected>מספר סועדים</option>
